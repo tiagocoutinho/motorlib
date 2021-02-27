@@ -48,6 +48,6 @@ setup(
     tests_require=test_requirements,
     python_requires=">=3.5",
     url="https://gitlab.com/tiagocoutinho/motorlib",
-    version="0.0.0",
+    version="0.1.0",
     zip_safe=True,
 )

@@ -8,7 +8,7 @@
 import math
 import time
 
-__version__ = "0.0.0"
+__version__ = "0.1.0"
 
 
 def p_for(p0, v0, a, t):
