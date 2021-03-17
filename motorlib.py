@@ -81,8 +81,8 @@ class JogTrajectory:
         return self.pi + self.accel_dp + self.vel * (dt - self.accel_time)
 
 
-class LinearTrajectory(object):
-    """
+class LinearTrajectory:
+    r"""
     Trajectory representation for a linear motion
 
                v|
@@ -229,7 +229,7 @@ class LinearTrajectory(object):
 
 
 class StopTrajectory(object):
-    """
+    r"""
        v|    vi
         |     |\
         |     | \
@@ -283,12 +283,12 @@ class StopTrajectory(object):
         return self.pi + self.vi * dt + 0.5 * self.accel * dt**2
 
 
-class Motion(object):
+class Motion:
     """Describe a single motion"""
 
     def __init__(self, pi, pf, velocity, accel, hard_limits, ti=None):
 
-        # TODO: take hard limits into account (complicated).
+        # TODO: take hard limits into account.
         # For now just shorten the movement
         self.hard_limits = low_limit, high_limit = hard_limits
         if pf > high_limit:
@@ -311,12 +311,12 @@ class Motion(object):
         self.trajectory = StopTrajectory(pi, vi, self.accel, ti)
 
 
-class Jog(object):
+class Jog:
     """Describe a single motion"""
 
     def __init__(self, pi, velocity, accel, hard_limits, vi=0, ti=None):
 
-        # TODO: take hard limits into account (complicated).
+        # TODO: take hard limits into account.
         self.hard_limits = low_limit, high_limit = hard_limits
         self.trajectory = JogTrajectory(pi, velocity, accel, vi, ti)
 
