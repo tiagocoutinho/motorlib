@@ -222,8 +222,10 @@ class LinearTrajectory(object):
         return dt
 
     def __repr__(self):
-        return "{0}({1.pi}, {1.pf}, {1.velocity}, {1.accel}, {1.ti})" \
-            .format(type(self).__name__, self)
+        return "{}({}, {}, {}, {}, {})".format(
+            type(self).__name__, self.pi, self.pf,
+            self.vel, self.accel, self.ti
+        )
 
 
 class StopTrajectory(object):
