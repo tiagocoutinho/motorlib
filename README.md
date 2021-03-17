@@ -17,5 +17,32 @@ That's it!
 
 ## Usage
 
+
 ```python
-import motorlib
+>>> import motorlib
+>>> motion = motorlib.Motion(10, 1000, 10, 5, (-float('inf'), float('inf')))
+
+>>> motion.position()
+38.040199
+
+>>> motion.duration
+101.0
+
+>>> motion.accel_time
+2.0
+
+>>> motion.pb
+990.0
+
+>>> motion.dp
+990
+
+>>> motion.reaches_top_vel
+True
+
+>>> motion.top_vel_dp
+970.0
+
+>>> motion.top_vel_time
+97.0
+```
